@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from PIL import Image
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DATA_DIR = os.path.join(BASE_DIR, "data_files")
+SAMPLES_DIR = os.path.join(BASE_DIR, "samples")
 OUTPUT_DIR = os.path.join(BASE_DIR, "outputs", "runs")
 
 def load_image(path, target_size=331):
@@ -71,7 +71,7 @@ def run_deep_dream_multiscale(model, image, steps=800, step_size=0.025, octaves=
     return deprocess(image), run_name
 
 if __name__ == "__main__":
-    input_path = os.path.join(DATA_DIR, "sample.jpg")
+    input_path = os.path.join(SAMPLES_DIR, "portrait_source.png")
     dream_image = load_image(input_path)
 
     final_image, folder = run_deep_dream_multiscale(
